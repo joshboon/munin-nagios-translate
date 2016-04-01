@@ -1,0 +1,11 @@
+# This should be the root of your munin host. I will follow all links here to find hosts and services
+MUNINHOST=""
+# Where your munin include folder is
+MUNININCLUDEDIR="/etc/munin/munin-conf.d"
+# Where your nagion or icinga object definition files live
+OBJECTSDIR="/etc/icinga/objects"
+# Set to generic-host for ping checks or write your own
+HOSTTEMPLATE="generic-host"
+# I have had munin hosts fall off that I did not expect. If you lack monitoring munin as service
+# then this will alert you when you run the script of missing nodes
+CHECKHOSTS=1
