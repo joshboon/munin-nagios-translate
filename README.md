@@ -18,12 +18,16 @@ This script will digest a munin montioring front end and spit out a full icinga 
 * setup config files
 Munin has to be configured to have one file per host in the munin include dir with the template below. I will also use the specified address for pings. I generate mine on the fly from my config data and plan to release that script soon.
 Sample config
+```
 [$HOSTNAME]
     address $ADDRESS
+```
 * install nsca client 
 * setup munin notification channel
 add the following to your munin.conf
+```
 contact.nagios.command /usr/sbin/send_nsca  -H $ICINGAIP  -c /etc/send_nsca.cfg -e'\n'
+```
 ## Run
 Run make_munin_nagios_config.sh 
 check sanity of output with a config check then reload icinga or nagios
